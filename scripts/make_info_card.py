@@ -2,7 +2,8 @@
 import os
 
 STATIC = os.environ.get("STATIC") == "1"
-W, H = 700, 650
+# same aspect as portrait-ascii.svg (594x593) so both cards render the same size
+W, H = 700, 699
 BG, BORDER, LINE = "#050608", "#2a2f3a", "#1a1d24"
 GOLD, GOLD_LT, BLUE, BLUE_LT = "#d4af37", "#f7dc8a", "#3b82f6", "#60a5fa"
 VAL, DIM = "#e6edf3", "#8ba3c7"
@@ -51,25 +52,25 @@ def chips(y, items, stroke, fill, color, gap=8):
 
 
 rows = []
-y = 196
+y = 206
 rows.append(key(y, "Role") + f'<text x="{VAL_X}" y="{y}" fill="{VAL}">Odoo Functional Consultant</text>')
-y += 50
+y += 56
 rows.append(key(y, "Odoo") + chips(y, ["v18", "v19"], GOLD, "#1c1607", GOLD_LT))
-y += 50
+y += 56
 rows.append(key(y, "Modules") + chips(y, ["Sales", "Inventory", "POS", "Accounting", "Purchases"], "#1e3a8a", "#0b1426", BLUE_LT, gap=7))
-y += 50
+y += 56
 rows.append(key(y, "Edu") + f'<text x="{VAL_X}" y="{y}" fill="{VAL}">B.Sc. Information Technology</text>'
             f'<text x="{VAL_X}" y="{y + 22}" fill="{DIM}" font-size="14">Jazan University · 2025</text>')
-y += 72
+y += 78
 award = "1st Place · Raqeem Accounting Hackathon 2024"
 aw = len(award) * CH_S + 46
 rows.append(key(y, "Award") +
             f'<rect x="{VAL_X}" y="{y - 18}" width="{aw:.0f}" height="26" rx="6" fill="#1c1607" stroke="{GOLD}" stroke-opacity="0.6"/>'
             f'<text x="{VAL_X + 12}" y="{y}" font-size="14" fill="{GOLD_LT}">★</text>'
             f'<text x="{VAL_X + 32}" y="{y}" font-size="14" fill="{GOLD_LT}">{esc(award)}</text>')
-y += 50
+y += 56
 rows.append(key(y, "Location") + f'<text x="{VAL_X}" y="{y}" fill="{VAL}">Saudi Arabia</text>')
-y += 50
+y += 56
 pulse = "" if STATIC else (
     f'<animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>'
     f'<animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>')
@@ -104,7 +105,7 @@ for i, r in enumerate(rows):
     out.append(block(3 + i, r))
 
 # palette strip like neofetch's colour blocks
-sy = last_y + 56
+sy = last_y + 60
 sw = "".join(f'<rect x="{KEY_X + i * 40}" y="{sy}" width="34" height="18" rx="4" fill="{c}"/>' for i, c in enumerate(SWATCH))
 out.append(block(3 + len(rows), sw + f'<rect x="{KEY_X}" y="{sy + 28}" width="{len(SWATCH) * 40 - 6}" height="3" rx="1.5" fill="url(#gBar)"/>'))
 out.append('</g></svg>')
