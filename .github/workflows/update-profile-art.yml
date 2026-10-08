@@ -13,6 +13,11 @@ name: Update profile art
 permissions:
   contents: write
 
+# one run at a time, so a manual run and a push run never race to commit
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
 jobs:
   heatmap:
     runs-on: ubuntu-latest
