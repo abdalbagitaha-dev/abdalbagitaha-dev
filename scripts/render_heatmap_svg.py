@@ -3,8 +3,8 @@ import json, sys, datetime as dt
 
 SRC = sys.argv[1] if len(sys.argv) > 1 else "data/contributions.json"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "contrib-heatmap.svg"
-# navy (none) -> blues -> gold; level 5 is a bright gold top end
-PALETTE = ["#13233d", "#1e3a8a", "#2563eb", "#b8912f", "#d4af37", "#ffd966"]
+# near-black (none) -> blues -> gold; level 5 is a bright gold top end
+PALETTE = ["#1a1d24", "#1e3a8a", "#2563eb", "#b8912f", "#d4af37", "#ffd966"]
 W = 860
 CELL, GAP = 12, 3
 PITCH = CELL + GAP
@@ -61,7 +61,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 .c{{opacity:0;transform-box:fill-box;transform-origin:center;animation:in .5s ease-out both}}
 @keyframes in{{from{{opacity:0;transform:translateY(-8px) scale(.6)}}to{{opacity:1;transform:none}}}}
 </style>
-<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="10" fill="#0a1628" stroke="#1e3a5f"/>
+<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="10" fill="#050608" stroke="#2a2f3a"/>
 <circle cx="22" cy="20" r="5.5" fill="#d4af37"/><circle cx="42" cy="20" r="5.5" fill="#f7dc8a"/><circle cx="62" cy="20" r="5.5" fill="#3b82f6"/>
 <text x="{W/2}" y="25" text-anchor="middle" class="l">contributions.sh</text>
 <g transform="translate({(W - 2 * 18 - LEFT - grid_w) / 2 + 18 - 0:.1f},0)">

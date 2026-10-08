@@ -3,7 +3,7 @@ import os
 
 STATIC = os.environ.get("STATIC") == "1"
 W, H = 700, 450
-BG, BORDER = "#0a1628", "#1e3a5f"
+BG, BORDER = "#050608", "#2a2f3a"
 KEY, VAL, DIM, ACC = "#d4af37", "#e6edf3", "#8ba3c7", "#60a5fa"
 
 USER = "abdalbagitaha-dev"
@@ -16,7 +16,7 @@ ROWS = [
     ("Location", "Saudi Arabia"),
     ("Status",   "Open to roles anywhere in KSA"),
 ]
-SWATCH = ["#0f2340", "#1e3a8a", "#2563eb", "#60a5fa", "#8a6d1d", "#b8912f", "#d4af37", "#f7dc8a"]
+SWATCH = ["#1a1d24", "#1e3a8a", "#2563eb", "#60a5fa", "#8a6d1d", "#b8912f", "#d4af37", "#f7dc8a"]
 
 def esc(t):
     return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")

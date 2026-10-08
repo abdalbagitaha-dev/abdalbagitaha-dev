@@ -13,7 +13,7 @@ RAMP = " .,:;-~=+*ox%#&@"   # dark (blank) -> bright (dense)
 COLS = 104
 CHAR_W, LINE_H, FONT = 5.4, 9.6, 9
 PAD = 16
-BG, BORDER = "#0a1628", "#1e3a5f"
+BG, BORDER = "#050608", "#2a2f3a"
 # tone bands by brightness: deep blue for shadows, blue mids, gold skin, light-gold highlights
 TONES = [(0.30, "#3b6fd4"), (0.52, "#6c9cf0"), (0.80, "#d4af37"), (1.01, "#f7dc8a")]
 
